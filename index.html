@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tengo algo importante que decirte... 🥺</title>
+  <!-- Google Fonts & Canvas Confetti -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fondo con estrellas y nubes suaves flotantes -->
+  <div class="ambient-bg">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="floating-cloud cloud-1">☁️</div>
+    <div class="floating-cloud cloud-2">✨</div>
+    <div class="floating-cloud cloud-3">☁️</div>
+    <div class="floating-cloud cloud-4">🌸</div>
+  </div>
+
+  <main class="app-container">
+    
+    <!-- PANTALLA 1: INTRO / ARREPENTIMIENTO -->
+    <section class="screen active" id="screen-1">
+      <div class="card glass-effect">
+        <div class="badge-tag">☁️ MENSAJE ESPECIAL PARA TI ✨</div>
+        <div class="gif-container">
+          <img src="assets/cinna_sad.gif" alt="Cinnamoroll triste" class="cinna-gif pulse-anim">
+        </div>
+        <h1 class="title">Hola... sé que me equivoqué feo 💔</h1>
+        <p class="subtitle">
+          Han pasado unas semanas y no he dejado de pensar en lo tonto que fui contigo.
+        </p>
+        
+        <div class="guilt-meter-box">
+          <div class="meter-label">
+            <span>Nivel de arrepentimiento:</span>
+            <span class="meter-val" id="guilt-val">100% 💔</span>
+          </div>
+          <div class="meter-bar">
+            <div class="meter-fill" style="width: 100%;"></div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="nextScreen(2)">
+          Ver mi declaración de culpa 🐾
+        </button>
+      </div>
+    </section>
+
+    <!-- PANTALLA 2: EL INFORME DE LA CAGADA (HUMOR & AUTOCRÍTICA SINCERA) -->
+    <section class="screen" id="screen-2">
+      <div class="card glass-effect">
+        <div class="badge-tag">🎀 ANÁLISIS DE LOS HECHOS</div>
+        <div class="gif-container small">
+          <img src="assets/cinna_think.gif" alt="Cinnamoroll pensando" class="cinna-gif">
+        </div>
+        <h2 class="title-sm">¿Qué fue lo que pasó por mi cabeza?</h2>
+        
+        <div class="terminal-box">
+          <p class="terminal-line"><span class="t-red">Error 404:</span> Sentido común no encontrado.</p>
+          <p class="terminal-line"><span class="t-yellow">Advertencia:</span> Mi bocota actuó más rápido que mis neuronas.</p>
+          <p class="terminal-line"><span class="t-green">Realidad:</span> No hay excusa que valga, la regué contigo.</p>
+        </div>
+
+        <div class="interactive-reasons">
+          <p class="section-hint">Toca cada tarjetita para que veas que lo tengo claro:</p>
+          <div class="reasons-grid">
+            <div class="reason-card" onclick="revealCard(this)">
+              <div class="card-inner">
+                <div class="card-front">🫣 ¿Buscaba justificarme?</div>
+                <div class="card-back">Cero excusas. Asumo toda la responsabilidad de mi torpeza.</div>
+              </div>
+            </div>
+            <div class="reason-card" onclick="revealCard(this)">
+              <div class="card-inner">
+                <div class="card-front">💭 ¿Me dio igual?</div>
+                <div class="card-back">Para nada. Llevo días pensando en cómo arreglarlo y en lo mucho que te extraño.</div>
+              </div>
+            </div>
+            <div class="reason-card" onclick="revealCard(this)">
+              <div class="card-inner">
+                <div class="card-front">🍕 ¿Plan de compensación?</div>
+                <div class="card-back">Tu comida favorita, cero dramas, y escuchar todo lo que tengas para decirme.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button class="btn btn-secondary" onclick="prevScreen(1)">Volver</button>
+          <button class="btn btn-primary" onclick="nextScreen(3)">Continuar a la verdad 💌</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 3: LA CARTA SINCERA (ESTILO NOTA ESCRITA) -->
+    <section class="screen" id="screen-3">
+      <div class="card glass-effect">
+        <div class="badge-tag">✍️ DESDE EL FONDO DE MI CORAZÓN</div>
+        <div class="letter-paper">
+          <div class="letter-pin">📌</div>
+          <h3 class="letter-title">Para ti... 🌸</h3>
+          <p class="letter-body">
+            Sé que las palabras se las lleva el viento si no van acompañadas de acciones, pero necesitaba decirte esto:
+            <br><br>
+            Valoro muchísimo cada momento que compartimos juntos y me duele haber sido yo quien arruinara las cosas. No espero que un botón mágico borre lo sucedido de golpe, pero sí quiero que sepas que me importas de verdad, que aprendí la lección y que me encantaría poder empezar de nuevo, despacito y bien.
+          </p>
+          <div class="letter-signature">
+            Con todo mi cariño y mucha vergüenza,<br>
+            <strong>— Daniel.</strong>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button class="btn btn-secondary" onclick="prevScreen(2)">Atrás</button>
+          <button class="btn btn-primary" onclick="nextScreen(4)">La pregunta del millón 🎯</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLA 4: EL MOMENTO DECISIVO (BOTÓN ESCURRIDIZO) -->
+    <section class="screen" id="screen-4">
+      <div class="card glass-effect" id="final-card">
+        <div class="gif-container">
+          <img src="assets/cinna_love.gif" alt="Cinnamoroll pidiendo perdon" class="cinna-gif">
+        </div>
+        <h2 class="title">¿Me perdonas y me dejas invitarte algo rico para hablar en persona?</h2>
+        <p class="subtitle" id="final-sub">Prometo portarme bien y pagar yo la cuenta completa 🥺</p>
+
+        <div class="decision-arena" id="arena">
+          <button class="btn btn-success btn-lg" id="btn-yes" onclick="celebrateSuccess()">
+            ✨ Sí, te perdono (o te doy otra chance)
+          </button>
+          <button class="btn btn-danger btn-lg" id="btn-no" onmouseover="fleeButton(this, event)" ontouchstart="fleeButton(this, event)" onclick="fleeButton(this, event)">
+            Ni en tus sueños 😤
+          </button>
+        </div>
+        
+        <p class="sneaky-note" id="sneaky-note">💡 Pista: El botón rosado tiene problemas de compromiso y escapa si intentas tocarlo.</p>
+      </div>
+    </section>
+
+    <!-- PANTALLA 5: FINAL FELIZ / CELEBRACIÓN -->
+    <section class="screen" id="screen-5">
+      <div class="card glass-effect celebration-card">
+        <div class="gif-container">
+          <img src="assets/cinna_happy.gif" alt="Cinnamoroll feliz celebrando" class="cinna-gif bounce-anim">
+        </div>
+        <h1 class="title">¡GRACIAS POR OTRA OPORTUNIDAD! 💖</h1>
+        <p class="subtitle">
+          Prometo que no te vas a arrepentir. Mi misión ahora es sacarte muchas sonrisas.
+        </p>
+
+        <div class="voucher-box">
+          <div class="voucher-tag">VALE CANJEABLE OFICIAL</div>
+          <h3>🎟️ "Paz, Comida Rica y Cero Cagadas"</h3>
+          <p>Válido por: Tu comida favorita + helado/café + yo escuchándote atentamente.</p>
+        </div>
+
+        <!-- Botón para enviarte WhatsApp directamente -->
+        <a id="whatsapp-link" href="#" target="_blank" class="btn btn-whatsapp">
+          📲 Escríbeme y cobremos ese vale ahora
+        </a>
+
+        <div class="share-footer">
+          <button class="btn btn-ghost" onclick="restartApp()">Volver a ver desde el inicio 🔄</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
